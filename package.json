@@ -22,7 +22,10 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
+    "ethereumjs-testrpc": "^6.0.3",
     "rxjs": "^5.5.2",
+    "solc": "^0.4.19",
+    "web3": "^0.20.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
