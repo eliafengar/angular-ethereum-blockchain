@@ -8,26 +8,41 @@ A Counter contract being deployed to ethereum blockchain network, simply increme
 
 ## Prerequisites
 Ethereum blockchain web3js library 0.20.1
+
 Ethereum local development server, ethereumjs-testrpc library 6.0.3
+
 For Solidity contract compilation, solc library 0.4.19
 
 Install required libraries with "npm install ethereumjs-testrpc solc web3@0.20.1"
 
 ## Deploy Contract to ethereum blockchain network
 Open node console
+
 Web3 = require('web3')
+
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
 code = fs.readFileSync('src/contracts/Counter.sol').toString()
+
 solc = require('solc')
+
 compiledCode = solc.compile(code)
+
 abiDefinition = JSON.parse(compiledCode.contracts[':Counter'].interface)
+
 CounterContract = web3.eth.contract(abiDefinition)
+
 byteCode = compiledCode.contracts[':Counter'].bytecode
+
 deployedContract = CounterContract.new({data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
+
 contractInstance = CounterContract.at(deployedContract.address)
 
+
 Test contract deployed and working properly
+
 contractInstance.getCounts.call()
+
 contractInstance.increment({from: web3.eth.accounts[0]})
 
 ## Development server
