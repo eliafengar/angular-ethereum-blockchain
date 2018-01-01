@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Purpose & Description
 The Project aims to show the way to develop Ethereum DApp(Decentralized App) as a Standard Web Application utilizing Angular 5 as the Frontend Framework.
+
 A Counter contract being deployed to ethereum blockchain network, simply increment and decrement operations provided to interact with the blockchain.
 
 ## Prerequisites
@@ -39,7 +40,7 @@ deployedContract = CounterContract.new({data: byteCode, from: web3.eth.accounts[
 contractInstance = CounterContract.at(deployedContract.address)
 
 
-Test contract deployed and working properly
+### Test contract deployed and working properly
 
 contractInstance.getCounts.call()
 
@@ -47,10 +48,10 @@ contractInstance.increment({from: web3.eth.accounts[0]})
 
 ## Development server
 
-For Ethereum Development.
+### For Ethereum Development.
 Run ./node_modules/.bin/testrpc for a dev server.
 
-For Angular Development
+### For Angular Development
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
